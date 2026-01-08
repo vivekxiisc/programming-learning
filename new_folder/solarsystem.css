@@ -64,6 +64,7 @@ body{
     background-color: #2a6cff;
     
 }
+<<<<<<< HEAD
 
 .mars{
     width: 300px;
@@ -76,6 +77,8 @@ body{
     background-color: #d20c0c;
     
 }
+=======
+>>>>>>> 48fcae9446274bfe6e730720abd556e5b297e7b5
 @keyframes rotate {
     from{
         transform: translate( -50%, -50% )
