@@ -42,8 +42,17 @@
 <button class="nav-btn"><i class="fa fa-chevron-left"></i></button>
 <button class="nav-btn"><i class="fa fa-chevron-right"></i></button>
 
-<div class="user">
+<div id="user">
 <i class="fa fa-user"></i>
+<div id="loginBox">
+
+<h3>Account</h3>
+
+<button id="loginBtn">Login</button>
+<button id="registerBtn">Register</button>
+
+</div>
+
 </div>
 
 </div>
@@ -57,6 +66,10 @@
 <img src="https://picsum.photos/200?1">
 <h4>Rahat Fateh Ali Khan</h4>
 <p>Top Songs</p>
+<button class="like-btn">🤍</button>
+<span class="status">Unliked</span>
+
+
 </div>
 
 <!-- <div class="card">
@@ -70,30 +83,55 @@
 <img src="https://picsum.photos/200?1">
 <h4>Bus Playslist</h4>
 <p>Artist Name</p>
+<button class="like-btn">🤍</button>
+<span class="status">Unliked</span>
+
+ <!-- <button class="like-btn"></button> -->
+
+
 </div>
 
 <div class="card" data-song="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
 <img src="https://picsum.photos/200?3">
 <h4>Song Three</h4>
 <p>Artist Name</p>
+<button class="like-btn">🤍</button>
+<span class="status">Unliked</span>
+
+
 </div>
 
 <div class="card" data-song="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
 <img src="https://picsum.photos/200?4">
 <h4>Song Four</h4>
 <p>Artist Name</p>
+<button class="like-btn">🤍</button>
+<span class="status">Unliked</span>
+
+
+
 </div>
 
 <div class="card" data-song="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
 <img src="https://picsum.photos/200?5">
 <h4>Song Five</h4>
 <p>Artist Name</p>
+<button class="like-btn">🤍</button>
+<span class="status">Unliked</span>
+
+
+
 </div>
 
 <div class="card" data-song="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
 <img src="https://picsum.photos/200?6">
 <h4>Song Six</h4>
 <p>Artist Name</p>
+<button class="like-btn">🤍</button>
+<span class="status">Unliked</span>
+
+
+
 </div>
 
 </div>
@@ -125,10 +163,48 @@
 <i class="fa fa-volume-up"></i>
 </div>
 
-<audio id="song" src="song.mp3"></audio>
+<!-- <audio id="song" src="song.mp3"></audio> -->
 
 </div>
 <audio id="audioPlayer"></audio>
+
+<!-- LOGIN FORM -->
+
+<div id="loginForm" style="display:none">
+
+<h3>Login</h3>
+
+<input type="text" placeholder="Username">
+<br><br>
+
+<input type="password" placeholder="Password">
+<br><br>
+
+<button id="loginSubmit">Submit</button>
+
+</div>
+
+
+<!-- REGISTER FORM -->
+
+<div id="registerForm" style="display:none">
+
+<h3>Register</h3>
+
+<input type="text" placeholder="Name">
+<br><br>
+
+<input type="email" placeholder="Email">
+<br><br>
+
+<input type="password" placeholder="Password">
+<br><br>
+
+<button id="registerSubmit">Register</button>
+
+</div>
+
+</div>
 <script src="script.js"></script>
 </body>
 </html>
