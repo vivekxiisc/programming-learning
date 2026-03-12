@@ -157,8 +157,39 @@ font-size:20px;
 cursor:pointer;
 }
 
+.like-btn{
+color:white;
+font-size:20px;
+background:none;
+border:none;
+cursor:pointer;
+}
+.user-section{
+/* position:fixed; */
+cursor:pointer;
+}
+
+#loginBox{
+display: none;
+}
+/* position:absolute;
+top:30px;
+right:0;
+background:#222;
+padding:15px;
+border-radius:8px;
+display:none;
+}
+
+#loginBox button{
+display:block;
+margin:5px 0;
+padding:5px 10px;
+cursor:pointer;
+} */
 
 
+ 
 
 
 
