@@ -17,9 +17,7 @@ const users = {};
 app.use(express.static('public')); 
 
 // Home route (Default page)
-app.get('/', (req, res) => {
-    res.send("<h1>Server is running!</h1>");
-});
+
 
 io.on('connection', socket => {
     // Jab koi naya user join kare
