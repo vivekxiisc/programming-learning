@@ -1,21 +1,24 @@
-const http = require('http').createServer();
-const io = require('socket.io')(http, {
-    cors: {
-        origin: "*", // Kisi bhi website (Frontend) ko connect hone ki permission deta hai
-    }
-});
-
-// const PORT = process.env.PORT || 8000; // Render ke liye PORT dynamic rakha hai
-// const users = {};
 const express = require('express');
 const http = require('http');
 const app = express();
-const server = http.createServer(app); // Ye line check karein, ye honi chahiye
+const server = http.createServer(app);
+
+// Socket.io initialization
+const io = require('socket.io')(server, {
+    cors: {
+        origin: "*", 
+    }
+});
 
 const PORT = process.env.PORT || 10000;
+const users = {};
 
-server.listen(PORT, '0.0.0.0', () => {
-    console.log(`🚀 Server is running on port ${PORT}`);
+// Static files serve karne ke liye (agar aapka frontend isi folder mein hai)
+app.use(express.static('public')); 
+
+// Home route (Default page)
+app.get('/', (req, res) => {
+    res.send("<h1>Server is running!</h1>");
 });
 
 io.on('connection', socket => {
@@ -37,6 +40,7 @@ io.on('connection', socket => {
     });
 });
 
-http.listen(PORT, () => {
+// Port '0.0.0.0' Render ke liye bahut zaroori hai
+server.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 Server is running on port ${PORT}`);
 });
