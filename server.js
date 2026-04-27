@@ -5,8 +5,13 @@ const io = require('socket.io')(http, {
     }
 });
 
-const PORT = process.env.PORT || 8000; // Render ke liye PORT dynamic rakha hai
-const users = {};
+// const PORT = process.env.PORT || 8000; // Render ke liye PORT dynamic rakha hai
+// const users = {};
+const PORT = process.env.PORT || 10000;
+
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Server is running on port ${PORT}`);
+});
 
 io.on('connection', socket => {
     // Jab koi naya user join kare
