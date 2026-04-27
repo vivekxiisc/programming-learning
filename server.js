@@ -7,6 +7,11 @@ const io = require('socket.io')(http, {
 
 // const PORT = process.env.PORT || 8000; // Render ke liye PORT dynamic rakha hai
 // const users = {};
+const express = require('express');
+const http = require('http');
+const app = express();
+const server = http.createServer(app); // Ye line check karein, ye honi chahiye
+
 const PORT = process.env.PORT || 10000;
 
 server.listen(PORT, '0.0.0.0', () => {
