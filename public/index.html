@@ -1,29 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Realtime Chat App</title>
-
-    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
-    <script defer src="client.js"></script>
-
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <nav>
-      <img class="logo" src="chat.png" alt="" />n
-    </nav>
-    <div class="container">
-      <!-- <div class="message left">Vivek:How are you?</div> -->
-      <!-- <div class="message right">Bittu:I am fine</div> -->
+<head>
+    <meta charset="UTF-8">
+    <title>V-Chat | Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: linear-gradient(to bottom, #dec4fc, #913ffc); display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; color: white;">
+    <div style="background: rgba(0,0,0,0.4); padding: 40px; border-radius: 20px; text-align: center; width: 320px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+        <img src="chat.png" alt="Logo" style="width: 60px; margin-bottom: 10px;">
+        <h2>Login to V-Chat</h2>
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="Username" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; box-sizing: border-box;">
+            <input type="password" name="password" placeholder="Password" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; box-sizing: border-box;">
+            <button type="submit" style="width: 100%; padding: 12px; background: #fff; color: #913ffc; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px;">Login</button>
+        </form>
+        <p style="margin-top: 20px;">New user? <a href="/signup.html" style="color: #fff; font-weight: bold;">Create Account</a></p>
     </div>
-    <div class="send">
-      <form action="#" id="send-container">
-      <input type="text" name="messageInp" id="messageInp">
-        <button class="btn" type="submit">Send</button>
-      </form>
-    </div>
-  </body>
+</body>
 </html>

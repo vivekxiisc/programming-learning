@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>V-Chat Room</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="client.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <img class="logo" src="chat.png" alt="">
+            <h1>V-Chat Messenger</h1>
+        </div>
+    </nav>
+
+    <div class="container"></div>
+    <div id="typing-display"></div>
+
+    <div class="send">
+        <form id="send-container">
+            <input type="text" id="messageInp" placeholder="Type a message..." autocomplete="off">
+            <button class="btn" type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
