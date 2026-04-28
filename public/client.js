@@ -1,43 +1,36 @@
 const socket = io();
-const form = document.getElementById('send-container');
-const messageInput = document.getElementById('messageInp');
-const messageContainer = document.querySelector(".container");
-const typingDisplay = document.getElementById('typing-display');
+const chatForm = document.getElementById('chat-form');
+const chatMessages = document.getElementById('chat-messages');
 
-// Private Room Logic
+// URL se Username aur Room ID nikalna
 const urlParams = new URLSearchParams(window.location.search);
-const room = urlParams.get('room') || 'Global';
+const username = urlParams.get('username');
+const room = urlParams.get('room');
 
-const name = prompt(`Room: ${room}\nEnter your name:`);
-socket.emit('new-user-joined', { name, room });
+// Server ko join karne ka signal bhejna
+socket.emit('joinRoom', { username, room });
 
-const append = (message, position) => {
-    const el = document.createElement('div');
-    el.innerText = message;
-    el.classList.add('message', position);
-    messageContainer.append(el);
-    messageContainer.scrollTop = messageContainer.scrollHeight;
-}
-
-// Typing Indicator
-messageInput.addEventListener('input', () => {
-    socket.emit('typing', name);
+// Message receive karna
+socket.on('message', (message) => {
+    const div = document.createElement('div');
+    div.classList.add('message');
+    div.innerHTML = `<p class="meta">${message.username} <span>${message.time}</span></p>
+                    <p class="text">${message.text}</p>`;
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 });
 
-socket.on('display-typing', (n) => {
-    typingDisplay.innerText = `${n} is typing...`;
-    setTimeout(() => { typingDisplay.innerText = ''; }, 2000);
-});
-
-socket.on('user-joined', n => append(`${n} joined`, 'left'));
-socket.on('receive', d => append(`${d.name}: ${d.message}`, 'left'));
-socket.on('left', n => append(`${n} left`, 'left'));
-
-form.addEventListener('submit', (e) => {
+// Message bhejte waqt Room ID saath bhejna
+chatForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    if(messageInput.value.trim()){
-        append(`You: ${messageInput.value}`, 'right');
-        socket.emit('send', messageInput.value);
-        messageInput.value = '';
-    }
+    const msg = e.target.elements.msg.value;
+
+    socket.emit('chatMessage', {
+        username: username,
+        text: msg,
+        room: room // Ye sabse important hai
+    });
+
+    e.target.elements.msg.value = '';
+    e.target.elements.msg.focus();
 });
