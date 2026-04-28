@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>V-Chat Room</title>
+    <meta charset="UTF-8">
+    <title>V-Chat Private</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="/socket.io/socket.io.js"></script>
-    <script defer src="client.js"></script>
 </head>
 <body>
-    <nav>
-        <div class="nav-content">
-            <img class="logo" src="chat.png" alt="">
-            <h1>V-Chat Messenger</h1>
-        </div>
-    </nav>
-
-    <div class="container"></div>
-    <div id="typing-display"></div>
-
-    <div class="send">
-        <form id="send-container">
-            <input type="text" id="messageInp" placeholder="Type a message..." autocomplete="off">
-            <button class="btn" type="submit">Send</button>
+    <div class="chat-container">
+        <header class="chat-header">
+            <h2 id="room-name">V-Chat Room</h2>
+            <a href="/login.html" style="color: white; text-decoration: none;">Exit</a>
+        </header>
+        <main id="chat-messages"></main>
+        <div id="typing-status"></div>
+        <form id="chat-form" class="chat-form-container">
+            <input id="msg" type="text" placeholder="Type a message..." required autocomplete="off">
+            <button type="submit" class="btn-send">➤</button>
         </form>
     </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
 </body>
 </html>
