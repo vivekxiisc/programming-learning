@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Assistant</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f7f6; padding: 40px; display: flex; justify-content: center; }
+        .box { width: 100%; max-width: 600px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; }
+        .input-group { display: flex; margin-bottom: 20px; }
+        input, select, button { padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 15px; }
+        input { flex: 2; border-right: none; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+        select { border-radius: 0; border-right: none; background: #eee; }
+        button { flex: 1; background: #27ae60; color: white; border: none; border-top-left-radius: 0; border-bottom-left-radius: 0; cursor: pointer; }
+        .result { border-top: 2px solid #eee; margin-top: 20px; padding-top: 20px; color: #34495e; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>🏥 My Medical App</h1>
+        <form method="POST">
+            <div class="input-group">
+                <input type="text" name="query" placeholder="Enter name..." value="{{ query }}" required>
+                <select name="type">
+                    <option value="medicine" {% if search_type == 'medicine' %}selected{% endif %}>Medicine</option>
+                    <option value="symptom" {% if search_type == 'symptom' %}selected{% endif %}>Symptom</option>
+                </select>
+                <button type="submit">Search</button>
+            </div>
+        </form>
+
+        {% if result %}
+            <div class="result">
+                {% if search_type == 'medicine' %}
+                    <h2>{{ result.title }}</h2>
+                    <p><strong>Info:</strong> {{ result.uses }}</p>
+                    <p><a href="{{ result.url }}" target="_blank">Full details on Wikipedia →</a></p>
+                {% else %}
+                    <h3>Suggested:</h3>
+                    <p>{{ result }}</p>
+                {% endif %}
+            </div>
+        {% elif query %}
+            <p style="color: red;">No data found for "{{ query }}".</p>
+        {% endif %}
+    </div>
+</body>
+</html>
