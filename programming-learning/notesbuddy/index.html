@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NotesBuddy - BCA Notes</title>
+  <style>
+    :root {
+      --peacock-blue: #1c3f60;
+      --peacock-green: #2e8b57;
+      --peacock-purple: #5f4b8b;
+      --peacock-gold: #d4af37;
+      --background-light: #f4fcff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--background-light);
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--peacock-blue), var(--peacock-purple));
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: var(--peacock-green);
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background-color: var(--peacock-blue);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    /* --- PAGE BY PAGE CSS --- */
+    .semester {
+      display: none; /* Sab sections hide rahenge */
+      background-color: white;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-left: 10px solid var(--peacock-gold);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Jab active class hogi tabhi dikhega */
+    .active-page {
+      display: block !important;
+    }
+
+    .subject {
+      margin-bottom: 10px;
+    }
+
+    .subject a {
+      color: var(--peacock-purple);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .subject a:hover {
+      text-decoration: underline;
+    }
+    embed {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+    footer {
+      background-color: var(--peacock-purple);
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: row;
+      }
+
+      header h1 {
+        font-size: 2.2em;
+      }
+    }
+    @media (max-width: 600px) {
+  nav {
+    flex-direction: row;
+  }
+
+  header h1 {
+    font-size: 2.2em;
+  }
+}
+
+/* 👇 YEH ADD KARO */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  embed {
+    width: 100%;
+    height: 300px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>NotesBuddy</h1>
+  <p>Your BCA Journey, Made Simple and Smart 🎓✨<br>
+  BCA Notes That Are Clear, Clean, and Powerful 🚀📘</p>
+</header>
+
+<nav>
+  <a onclick="showPage('home')">Home</a>
+  <a onclick="showPage('sem1')">Semester 1</a>
+  <a onclick="showPage('sem2')">Semester 2</a>
+  <a onclick="showPage('sem3')">Semester 3</a>
+  <a onclick="showPage('sem4')">Semester 4</a>
+  <a onclick="showPage('sem5')">Semester 5</a>
+  <a onclick="showPage('sem6')">Semester 6</a>
+</nav>
+
+<div class="container">
+
+  <section id="home" class="semester active-page">
+    <h2>Welcome to NotesBuddy</h2>
+    <p>🌟 Welcome to Notes Buddy – Your Smart Study Companion! 📚✨
+    Notes Buddy is a learning-focused platform made specially for students who want clear, reliable, and easy-to-understand notes. Here you will find semester-wise BCA (Bachelor of Computer Applications) notes, carefully arranged so you can study smoothly without confusion 📖🧠.
+    We provide both ✍️ handwritten notes and 💻 digital notes, designed in simple language for quick revision, concept clarity, and exam preparation. All notes are prepared according to college and university syllabi, making them perfect for semester exams ✅.
+    Notes Buddy is not limited to BCA students only. These notes are also useful for B.Tech students of any branch 🎓, especially for computer-related subjects like Programming, Data Structures, DBMS, Operating Systems, Computer Networks, and more 💡💻.
+    Along with academic content, we also offer 🏆 competitive exam notes for computer subjects, helpful for government exams, entrance tests, and other computer-based competitive examinations 📑⚙️.
+    You will also find 🔬 field notes and practical-based notes, which help you understand real-world applications, lab work, and project concepts. This makes learning more practical and industry-oriented 🛠️📊.
+    Our mission is to provide quality education that is simple, accessible, and student-friendly 🌍❤️. Whether you are preparing for semester exams 📘, competitive exams 🎯, or just want strong concepts, Notes Buddy is here to support you at every step 🚀.
+    ✨ Study Smart. Learn Better. Grow with Notes Buddy. ✨.</p>
+  </section>
+
+  <section id="sem1" class="semester">
+    <h2>Semester 1</h2>
+    <div class="subject">📘 <strong>C language notes:</strong> <a href="#">Download Notes</a></div> 
+
+    <a href="https://drive.google.com/file/d/1xnPhpkYt0KDYLgntuICOC3b2yefsBzdS/view?usp=sharing">📄 download handwritten notes</a>
+
+    <a href="https://drive.google.com/file/d/1yvUageewApA0v0Gbs0QGBN_rVd6i-0mS/view?usp=sharing">📄 download digital notes</a>
+    <br><br><br>
+
+
+    <div class="subject">📐 <strong>c++ language Notes:</strong> <a href="#">Download Notes </a></div>
+    <a href="https://www.cet.edu.in/noticefiles/285_OOPS%20lecture%20notes%20Complete.pdf" >📄 download digital notes</a>
+
+    <a href="https://drive.google.com/file/d/15QaffPO-DwO_DeaQ2dVJ0nUbQ8zwDacf/view?usp=sharing">📄 download handwritten notes</a>
+    <br><br><br>
+
+
+    <div class="subject">💻 <strong>Programming in C:</strong> <a href="#">Download Notes</a></div>
+    <a href="https://vardhaman.org/wp-content/uploads/2021/03/CP.pdf" >📄 download handwritten notes</a>
+    <br><br><br>
+
+
+    <div class="subject">💻 <strong>Computer System Architecture :</strong> <a href="#">Download Notes</a></div>
+    <a href="https://drive.google.com/file/d/1od6Blcluhh26_honyqw4RAdsqwRMfslF/view?usp=sharing" >📄 download handwritten notes</a>
+    <br><br><br>
+  </section>
+
+  <section id="sem2" class="semester">
+    <h2>Semester 2</h2>
+    <div class="subject">📊 <strong>Java language Notes</strong> <a href="#">Download Notes</a></div>
+     <a href="https://mrcet.com/downloads/digital_notes/IT/Java%20Programming.pdf"  >📄 download digital notes</a>
+     <a href="https://drive.google.com/file/d/1mj00SXE87f72xwjOusKcku-lBVLMOm0n/view?usp=sharing"  >📄 download digital notes</a>
+
+    <div class="subject">🔌 <strong>Discrete Mathematics:</strong> <a href="#">Download Notes</a></div>
+     <a href="https://mrcet.com/downloads/digital_notes/CSE/II%20Year/DISCRETE%20MATHEMATICS%20NOTES.pdf" >📄 download digital notes</a>
+     <a href="https://drive.google.com/file/d/1j9STo4LsP8Epwk4xi9M3xwF3xVXIocgp/view?usp=sharing"  >📄 download digital notes</a>
+  </section>
+
+ <section id="sem3" class="semester">
+    <h2>Semester 3</h2>
+    <div class="subject">🧑‍💻 <strong>DSA Notes(C++):</strong> <a href="#">Download Notes</a></div>
+    <a href="https://mrcet.com/downloads/digital_notes/CSE/II%20Year/DATA%20STRUCTURES%20DIGITAL%20NOTES.pdf" >📄 download handwritten notes</a>
+     <br><br><br>
+
+    <div class="subject">📊 <strong>Operting System notes:</strong> <a href="#">Download Notes</a></div>
+    <a href="https://mrcet.com/downloads/digital_notes/CSE/II%20Year/OPERATING%20SYSTEMS%20%20NOTES%20R18.pdf"> 📄 download handwritten notes</a>
+     <br><br><br>
+
+    <div class="subject">🧑‍💻 <strong>Computer Network notes:</strong> <a href="#">Download Notes</a></div>
+    <a href="https://mrcet.com/downloads/digital_notes/CSE/III%20Year/COMPUTER%20NETWORKS%20NOTES.pdf" > 📄 download handwritten notes</a>
+  </section>
+
+  <section id="sem4" class="semester">
+    <h2>Semester 4</h2>
+    <div class="subject">🌐 <strong>Data base mangement system (DBMS):</strong> <a href="#">Download Notes</a></div>
+    <a href="https://drive.google.com/file/d/1V5b3x4QEOA4u_yTTjs0V6MaDEwxSUVHt/view?usp=sharing" > 📄 download handwritten notes</a>
+      <br><br><br>
+
+    <div class="subject">⚙️ <strong>Design And Analysis of Algoritms (DAA) :</strong> <a href="#">Download Notes</a></div>
+    <a href="https://drive.google.com/file/d/1sWIlWsu9AZrw6XZzOsZarF11iEM6iXTf/view?usp=sharing" > 📄 download handwritten notes</a>
+ <br><br><br>
+
+    <div class="subject">⚙️ <strong>Software Engineering Theory :</strong> <a href="#">Download Notes</a></div>
+    <a href="https://drive.google.com/file/d/1clA27u4kKZyxBjKnDxi9nPaqlYQukjkz/view?usp=sharing"> 📄 download Digital notes</a>
+    <a href="https://drive.google.com/file/d/16weHD3fnyjY4x5lYo5ZKOWzfr_vG3yIW/view?usp=sharing" > 📄 download handwritten notes</a>
+  </section>
+
+  <section id="sem5" class="semester">
+    <h2>Semester 5</h2>
+    <div class="subject">🤖 <strong>Internet Technologies (CC-11) :</strong> <a href="#">Download Notes</a></div>
+    <a href="https://drive.google.com/file/d/14iSjxpzGoB0PuA111WEJ52Qd7OHxMrLB/view?usp=sharing" > 📄 download handwritten notes</a>
+ <br><br><br>
+
+    <div class="subject">📈 <strong>Theory of computation (cc-12):</strong> <a href="#">Download Notes</a></div>
+    <a href="https://drive.google.com/file/d/1XzzYXYNo6flDdTltpeF6vuKIkUj7p0Kc/view?usp=sharing"> 📄 download handwritten notes</a>
+ <br><br><br>
+
+    <div class="subject">📈 <strong>Information security (DSE 1):</strong> <a href="#">Download Notes</a></div>
+    <a href="https://drive.google.com/file/d/1d78q8YhCn1JS-6B3OPUSz4ZxQ4Nn_ut3/view?usp=sharing"> 📄 download handwritten notes</a>
+ <br><br><br>
+
+    <div class="subject">📈 <strong>Cloud computing (DSE 2):</strong> <a href="#">Download Notes</a></div>
+    <a href="https://drive.google.com/file/d/18nMFKmuH_DHw6no3PQm_FxvY2_w2Q6-P/view?usp=sharing"> 📄 download handwritten notes</a>
+    </section>
+
+  <section id="sem6" class="semester">
+    <h2>Semester 6</h2>
+
+      <div class="subject">📚 <strong>Artificial intelligense AI (CC-13):</strong> <a href="#">Download Notes</a></div>
+    <a href="https://drive.google.com/file/d/1gmRIOoFr1DXi8clMI7Ia0ZpgZEJrmX2W/view?usp=drive_link" > 📄 download handwritten notes</a>
+    <div class="subject">💼 <strong>Computer Graphics with Flash (CC-14):</strong> <a href="#">Download Notes</a></div>
+    <a href="https://drive.google.com/file/d/1gmRIOoFr1DXi8clMI7Ia0ZpgZEJrmX2W/view?usp=sharing"> 📄 download handwritten notes</a>
+
+    <div class="subject">📚 <strong>Numerical methods (DSE 3):</strong> <a href="#">Download Notes</a></div>
+    <div class="subject">📚 <strong>OJT & Project Work / Dissertation(DSE 4):</strong> <a href="#">Download Notes</a></div>
+  </section>
+
+</div>
+
+<div
+ style="padding: 20px; text-align: center;">
+ <a href="https://www.instagram.com/your_samir_?igsh=NmVxaHBka2Nnc245" target="_blank"
+style="display:inline-block; padding:10px 20px; background:#E1306C; color:white; border-radius:5px; text-decoration:none;">
+  📸 Follow me on Instagram
+</a>
+<br><br>
+<a href="https://www.linkedin.com/in/sameeran-sharma-7780a1320" target="_blank"
+style="display:inline-block; padding:10px 20px; background:#0077B5; color:white; border-radius:5px; text-decoration:none;">
+  💼 Connect on LinkedIn
+</a>
+<div style="text-align:center; margin:20px;">
+  <a href="https://wa.me/919905367148" target="_blank"
+  style="display:inline-block; padding:12px 25px; background:#25D366; color:white; border-radius:5px; text-decoration:none; font-weight:bold;">
+    💬 Chat on WhatsApp
+  </a>
+</div>
+  <img src="https://www.image2url.com/r2/default/images/1777130953798-1bffb4c4-aa1b-4d97-85e1-16ed889483d8.jpeg" alt="premium-photo" style="width: 150px; border-radius: 50%;">
+  <p class="intro"><strong>Name:- SAMEERAN SHARMA</strong><br>
+  Educational qualification: 12th PCM (GURU GOVIND SINGH PUBLIC SCHOOL , Ranchi),<br>
+  Pursuing BCA from Marwari college Ranchi (MCR),<br>
+  Hobies:- book reading, Team work, Typing contact:-9905367148<br><br>
+  I have a strong interest in computer science, software development, and database systems, and I enjoy building simple, useful, and student-friendly web platforms. I work with technologies like HTML, CSS, C, C++, Java (basic), and SQL (basic), and I focus on creating websites that are clear, responsive, and easy to use. I believe learning should be practical and understandable, which inspired me to create educational resources that truly help students.<br><br>
+  This website reflects my passion for learning, sharing knowledge, and building meaningful digital solutions.<br>
+  ✨ Learning. Building. Growing. ✨
+  </p>
+</div>
+
+<footer>
+  <p>© 2026 NotesBuddy | Designed by <strong>Sameeran Sharma</strong> | Inspired by My Own learning Journey as a BCA student. </p>
+</footer>
+
+<script>
+  function showPage(id) {
+    // 1. Sabhi semester sections ko hide karo
+    var pages = document.querySelectorAll('.semester');
+    pages.forEach(function(p) {
+      p.classList.remove('active-page');
+    });
+
+    // 2. Sirf select kiye hue ID ko dikhao
+    document.getElementById(id).classList.add('active-page');
+    
+    // 3. Scroll top tak
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
+
